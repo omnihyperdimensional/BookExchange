@@ -14,7 +14,7 @@ files in the repository in VSC) or you can just go to **htdocs** and work on tho
 
 Assign yourself the issues assigned to you. (if you don't see the issue assigned to you in the Slack chat, create the issue and </br> give a brief description of what is that you are doing)</br>
 
-## Committing and pushing to your branch
+## Committing and Pushing to your Branch
 
 If any changes are made to the files in the repository, they will show in the GitHub Desktop app, make sure that when you </br>
 are done, in the botton left corner give a brief description of your changes, and click **Commit to (the name of your branch)**</br>
@@ -22,13 +22,13 @@ are done, in the botton left corner give a brief description of your changes, an
 Then, you have to push your commits to the origin by clicking in **Push Origin** in the GitHub Desktop app. </br>
 **(make sure you are committin and pushing to you personal branch)**</br>
 
-## Merging to master branch
+## Merging to Master Branch
 
 After you are done, and you are rady to merge in the master branch you can just do it from the GitHub webpage by going to your</br> branch in the repository and click on **Compare and Pull Request** give a description of what is that you are merging and then</br>
 the people in charge will revise your code then if accepted will merge to the master, if not you will be told to changer your</br>
 code and the reason why it cannot be merged to the **Master Branch**.</br>
 
-### Coding style and naming convention
+### Coding Style and Naming Convention
 
 We are using Pascal Case naming convention, so make sure to name your files as "FileName.php"</br>
 Just make sure to code clean and comment your code</br>
