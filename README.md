@@ -24,8 +24,8 @@ Then, you have to push your commits to the origin by clicking in **Push Origin**
 
 ## Merging to the Master Branch
 
-After you are done, and you are rady to merge in the master branch you can just do it from the GitHub webpage by going to **your</br> branch** in the repository and clicking on **Compare and Pull Rquest**, give a description of what is that you are merging and </br>
-then you will require **2 people to revise your code**; then if accepted your code will merge to the master, if not you will have</br> to check your code.</br>
+After you are done, and you are rady to merge in the master branch you can just do it from the GitHub webpage by going to **your branch** in the repository and clicking on **Compare and Pull Rquest**, give a description of what is that you are merging and
+then you will require **2 people to revise your code**; then if accepted your code will merge to the master, if not you will have to check your code.</br>
 
 ## Built With
 
