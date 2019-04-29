@@ -23,10 +23,14 @@
 	}
 	if (mysqli_num_rows($results) > 0)
 	{
+		$data = mysqli_fetch_assoc($results);
 		session_start();
 		$_SESSION['name'] = $_POST["name"];
 		$_SESSION['email'] = $_POST["email"];
-		if($_SESSION['name'] == "admin" && $_SESSION['email'] == "admin@admin.com"){
+		$_SESSION['id'] = $data["id"];
+		$_SESSION['isAdmin'] = $data["is_admin"];
+
+		if ($_SESSION['isAdmin'] == 1){
 			header("Location: admin.php");
 		}else{
 			header("Location: main.php");
