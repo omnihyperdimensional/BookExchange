@@ -12,7 +12,7 @@
 <?php
 
 
-$userInsert = "insert into users values('" .
+$userInsert = "insert into users (name, email) values('" .
 $_POST["name"] .
 "', '" .
 $_POST["email"] .
