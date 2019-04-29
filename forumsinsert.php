@@ -11,14 +11,13 @@
 ?>
 <?php
 
-
-$postInsert = "insert into forum values(null, '" .
+$postInsert = "insert into forum values('" .
+$_POST["id"] .
+"', '" .
 $_POST["name"] .
 "', '" .
-$_POST["email"] .
-"', '" .
 $_POST["post"] .
-"')";
+"', null)";
 
 $result = mysqli_query($connect, $postInsert);
 	header("Location: forums.php");
