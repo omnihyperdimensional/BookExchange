@@ -18,35 +18,27 @@ if ($_FILES["pic"])
 }
 print ($pathname);
 ?>
-	<?php
-    	if ($_FILES["tocPic"])
-		{
-			$tocpathname = "toc/" . $_FILES['tocPic']['name'];
-			move_uploaded_file($_FILES['tocPic']['tmp_name'], $tocpathname);
-		}		
-	?>
 <?php
 	include("Connect_Database.php")
 ?>
 <?php
-    $bookInsert = "Insert into books values(null, '" . 
-					$_POST["name"] . 
-					"', '" . 
-					$_POST["email"] . 
-					"', '" .
-					$_POST["title"] . 
-					"', '" .
-					$_POST["description"] . 
-					"', '" .
-					$currentTime . 
-					"', '" .
-					$pathname . 
-					"', '" .
-					$tocpathname .
-					"')";
-    $results = mysqli_query($connect, $bookInsert);
-	
-	header("Location: shopping.php");
+
+$bookInsert = "insert into books values(null, '" .
+$_POST["name"] . 
+"', '" .
+$_POST["email"] . 
+"', '" .
+$_POST["title"] .
+"', '" .
+$_POST["description"] . 
+"', '" . 
+$currentTime . 
+"', '" . 
+$pathname .  
+"')";
+
+$result = mysqli_query($connect, $bookInsert);
+	header("Location: shopping.php")
 ?>
 
 </body>
