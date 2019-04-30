@@ -8,7 +8,7 @@
 ?>
 
 <div id="img-head">
-    <img src="images/brand_horizontal_logo_4color.png">
+    <a href="Main.php"><img src="images/brand_horizontal_logo_4color.png"></a>
     <a href="login.html" id="logout">LOG OUT</a>
 </div>
 
