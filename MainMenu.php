@@ -4,26 +4,28 @@
 
 <?php
 	session_start();
-	$name_email = 'name=' . $_SESSION['name'] . 
-				  '&email=' . $_SESSION['email'];
+	$name_email = 'name=' . $_SESSION['name'] . '&email=' . $_SESSION['email'];
 ?>
-<ul class="ul_css">
-<li class="li_css">
-	<a class="li_css_a" href = "main.php?<?php print $name_email;?>">Main</a>
-</li>
-<li class="li_css">
-	<a class="li_css_a" href = "shopping.php?<?php print $name_email;?>">Shopping</a>
-</li>
-<li class="li_css">
-	<a class="li_css_a" href = "selling.php?<?php print $name_email;?>">Selling</a>
-</li>
-<li class="li_css">
-	<a class="li_css_a" href = "profile.php?<?php print $name_email;?>">Profile</a>
-</li>
-<li class="li_css">
-	<a class="li_css_a" href = "forums.php?<?php print $name_email;?>">Forums</a>
-</li>
-<li class="li_css" style="float:right">
-	<a class="li_css_a" href = "logout.php?<?php print $name_email;?>">Logout</a>
-</li>
-</ul>
+
+<div id="img-head">
+    <a href="Main.php"><img src="images/brand_horizontal_logo_4color.png"></a>
+    <a href="logout.php" id="logout">LOG OUT</a>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row nav">
+        <div class="col">
+            <a class="li_css_a" href="shopping.php?<?php print $name_email; ?>">SHOP</a>
+        </div>
+        <div class="col">
+            <a class="li_css_a" href="selling.php?<?php print $name_email; ?>">SELL</a>
+        </div>
+        <div class="col">
+            <a class="li_css_a" href="forums.php?<?php print $name_email; ?>">FORUMS</a>
+        </div>
+        <div class="col">
+        <a class="li_css_a" href="profile.php?<?php print $name_email;?>">PROFILE</a>
+        </div>
+    </div>
+</div>
