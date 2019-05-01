@@ -4,6 +4,7 @@ drop table if exists users;
 drop table if exists books;
 drop table if exists forum;
 drop table if exists comments;
+drop table if exists cart;
 
 -- Create users table
 
@@ -12,7 +13,7 @@ CREATE TABLE users (
     name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     is_admin BOOLEAN NOT NULL DEFAULT 0,
-    balance DECIMAL(15, 2) NOT NULL DEFAULT 0
+    balance DECIMAL(15, 2) NOT NULL DEFAULT 100
 );
 
 -- Create forum table
@@ -21,7 +22,7 @@ CREATE TABLE forum (
     poster_id INT(10) NOT NULL,
     poster_name VARCHAR(50) NOT NULL,
     post VARCHAR(250) NOT NULL,
-    post_time DATETIME NULL
+    post_time DATETIME NULL     
 );
 
 -- Create books table
@@ -32,10 +33,11 @@ CREATE TABLE books (
     isbn13 VARCHAR(13) NOT NULL,
     title VARCHAR(100) NULL,
     author VARCHAR(50) NOT NULL,
-    price VARCHAR(50) NOT NULL,
+    price DECIMAL(15, 2) NOT NULL,
     description VARCHAR(500) NULL,
     post_time DATETIME NULL,
     pic_path VARCHAR(100) NULL,
+    toc_path VARCHAR(100) NULL,
     rating DOUBLE DEFAULT 0.0
 );
 
@@ -50,12 +52,21 @@ CREATE TABLE comments (
     rating INT(1)
 );
 
+-- Create a temporary cart table which gets deleted once the user logs out
+
+create table cart (
+    isbn10 VARCHAR(10) NOT NULL
+);
+
 -- Populate users table
 
 INSERT INTO users (name, email, is_admin) VALUES ('Kevin Crespin', 'kcrespi@calstatela.edu', 1);
 INSERT INTO users (name, email) VALUES ('Jose Rosa', 'jrosa@calstatela.edu');
 INSERT INTO users (name, email) VALUES ('Manuel Herrera', 'mherrer@calstatela.edu');
 INSERT INTO users (name, email) VALUES ('John Jackson', 'jjackson@calstatela.edu');
+INSERT INTO users (name, email) VALUES ('Sandip Hodkhasa', 'shodkha@calstatela.edu');
+INSERT INTO users (name, email, is_admin) VALUES ('Admin', 'admin@calstatela.edu', 1);
+INSERT INTO users (name, email ) VALUES ('test', 'test@test.edu');
 
 -- Populate forum table
 
@@ -66,14 +77,15 @@ INSERT INTO forum (poster_id, poster_name, post, post_time) VALUES (3, 'Manuel H
 
 -- Populate books table
 
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path) VALUES (1, '0321954351', '9780321954350', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', '$40.00', 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg');
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path) VALUES (2, '0133813460', '9780133813463', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', '$14.00', 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg');
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path) VALUES (4, '1118290275', '9781118290279', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', '$50.99', 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg');
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path) VALUES (1, '0062397346', '9780062397346', 'A People''s History of the United States', 'Howard Zinn', '$25.00', 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\historyus.jpg');
+INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (1, '0321954351', '9780321954350', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', 40.00, 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg', 'images\\tocCalculus.jpg');
+INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (2, '0133813460', '9780133813463', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', 14.00, 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg', 'images\\TOCJavaProgramming.jpg');
+INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (4, '1118290275', '9781118290279', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', 50.99, 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg', 'images\\tocPython.jpg');
+INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (1, '0062397346', '9780062397346', 'A People''s History of the United States', 'Howard Zinn', 25.00, 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\coverHistroyUs.jpg', 'images\\tocHistroyUs.jpg');
+INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (5, '1491914912', '9781491914915', 'Learning JavaScript', 'Ethan Brown', 27.00, 'Have been used few times', '2019-03-10', 'images\\CoverLearningJavascript.jpg', 'images\\TOCLearningJavascript.jpg');
 
 -- Populate comments table
 
 INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, post_time, rating) VALUES (1, 'Kevin Crespin', 'I hate, but love this book. It has tons of useful information for Calculus, and in Cal State you are required to have it in two semesters so if you are a freshman is a must have', '0321954351', '2019-03-10', 5);
 INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, post_time, rating) VALUES (1, 'Kevin Crespin', 'I hate this book. I just don''t like history.', '0062397346', '2019-03-10', 3);
 INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, post_time, rating) VALUES (4, 'John Jackson', 'This book will help you understand Java programming way better, I really recommend it.', '0133813460', '2019-03-10', 5);
-INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, post_time, rating) VALUES (2, 'Jose Rosa', 'Get yourself familiar with data structures in programming is really important, if you wanna be a decent programmer I recommend you starting here', '1118290275', '2019-03-10', 5);
+INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, post_time, rating) VALUES (5, 'Jose Rosa', 'Get yourself familiar with data structures in programming is really important, if you wanna be a decent programmer I recommend you starting here', '1118290275', '2019-03-10', 5);

@@ -33,6 +33,7 @@
 		<th>Price</th>
 		<th>Date Posted</th>
 		<th>Picture</th>
+		<th>Table of Content</th>
 	</tr>
 <?php
 while($row = mysqli_fetch_assoc($results)) {
@@ -40,9 +41,10 @@ while($row = mysqli_fetch_assoc($results)) {
 	print "<td>" . ($row["name"]) . "</td>";
 	print "<td>" . "<a href='BookInformation.php?isbn10=" . ($row["isbn10"]) . "'>";
 	print ($row["title"]) . "</a>" . "</td>";
-	print "<td>" . ($row["price"]) . "</td>";
+	print "<td>$" . ($row["price"]) . "</td>";
 	print "<td>" . substr($row["post_time"], 0, 10) . "</td>";
 	print "<td>" . "<img src='" . $row["pic_path"] . "' height = 190 width = 150>" . "</td>";
+	print "<td>" . "<img src='" . $row["toc_path"] . "' height = 190 width = 150>" . "</td>";
 	print "</tr>";
 }
 ?>

@@ -15,6 +15,7 @@
 ?>
 <nav>
 	<a href = "UserEnroll.php">Go to Enrollment Page</a>
+	<a style="float:right" href = "logout.php">Logout</a>
 </nav>
 <table align="center" border="2" width=400>
 	<tr>

@@ -28,7 +28,13 @@
 		$_SESSION['name'] = $_POST["name"];
 		$_SESSION['email'] = $_POST["email"];
 		$_SESSION['id'] = $data["id"];
-		header("Location: main.php");
+		$_SESSION['isAdmin'] = $data["is_admin"];
+
+		if ($_SESSION['isAdmin'] == 1){
+			header("Location: admin.php");
+		}else{
+			header("Location: main.php");
+		}
 		exit;
 	}
 ?>

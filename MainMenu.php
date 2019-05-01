@@ -9,23 +9,9 @@
 
 <div id="img-head">
     <a href="Main.php"><img src="images/brand_horizontal_logo_4color.png"></a>
-    <a href="login.html" id="logout">LOG OUT</a>
+    <a href="logout.php" id="logout">LOG OUT</a>
 </div>
 
-<!--<ul class="ul_css">
-    <li class="li_css">
-        <a class="li_css_a" href="shopping.php?<?php print $name_email; ?>">SHOPPING</a>
-    </li>
-    <li class="li_css">
-        <a class="li_css_a" href="selling.php?<?php print $name_email; ?>">SELLING</a>
-    </li>
-    <li class="li_css">
-        <a class="li_css_a" href="selling.php?<?php print $name_email; ?>">FORUMS</a>
-    </li>
-    <li class="li_css">
-        <a class="li_css_a" href="forums.php?<?php print $name_email;?>">pROFILE</a>
-    </li>
-</ul>-->
 
 <div class="container-fluid">
     <div class="row nav">
