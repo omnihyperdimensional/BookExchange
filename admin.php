@@ -10,15 +10,11 @@
 	include("Connect_Database.php");
 ?>
 <?php
-	include("MainMenu.php");
-?>
-<?php
 	$selectUsers = "SELECT * FROM users;";
 	$results = mysqli_query($connect, $selectUsers);
 ?>
 <nav>
 	<a href = "UserEnroll.php">Go to Enrollment Page</a>
-	<a style="float:right" href = "logout.php">Logout</a>
 </nav>
 <table align="center" border="2" width=400>
 	<tr>
