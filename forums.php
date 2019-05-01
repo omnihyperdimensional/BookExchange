@@ -9,25 +9,24 @@
 <body>
     <?php
 	include("MainMenu.php");
-?>
+    ?>
     <?php
 	include("Connect_Database.php");
-?>
+    ?>
     <?php
 	$selectForums = "select * from forum;";
 	$results = mysqli_query($connect, $selectForums);
-?>
+    ?>
     <nav>
     </nav>
-    <h2 align="center" style="margin-top:5px; margin-bottom:5px;">FORUM</h2>
+    <h2 align="center" style="margin-top:20px; margin-bottom:20px;">FORUM</h2>
     <div class="fluid-container">
         <div class="row">
             <div class="col-8">
-                <table class="table table-bordered table-sm">
+                <table class="table table-bordered table-sm" style="margin-left: 50px;">
                     <thead class="thead-light">
                         <tr>
                             <th>NAME</th>
-                            <th>USER ID</th>
                             <th>POST</th>
                         </tr>
                         <?php
@@ -36,9 +35,6 @@
                             print "<tr>";
                             print "<td>";
                             print ($row["poster_name"]);
-                            print "</td>";
-                            print "<td>";
-                            print ($row["poster_id"]);
                             print "</td>";
                             print "<td>";
                             print ($row["post"]);
@@ -53,26 +49,22 @@
 
             <div class="col-4">
                 <form action="forumsinsert.php" method="post">
-                    <table align="center">
+                    <table align="center" style="margin-left: 50px;">
                         <tr>
-                            <td>USERNAME</td>
-                            <td><input type="text" name="name" value="<?php print $_SESSION['name']?>" /></td>
+                            <td>Posting as: </td>
+                            <td style="text-align: left;"><input type="hidden" name="name" value="<?php print $_SESSION['name']?>"/> <?php print $_SESSION['name']?></td>
+                            <input type="hidden" name="id" value="<?php print $_SESSION['id']?>" />
                         </tr>
                         <tr>
-                            <td>ID</td>
-                            <td><input type="text" name="id" value="<?php print $_SESSION['id']?>" /></td>
+                            <td colspan="2"><textarea rows="6" cols="40" name="post" ></textarea></td>
                         </tr>
                         <tr>
-                            <td>POST</td>
-                            <td><input type="text" name="post" /></td>
-                        </tr>
-                        <tr>
-                            <td><input type="submit" value="SUBMIT" /></td>
+                            <td></td>
+                            <td style="text-align: right;"><input type="submit" value="POST" style="width: 100px; background: #4a4f55; color: #ffffff;"/></td>
                         </tr>
                 </form>
             </div>
         </div>
     </div>
 </body>
-
 </html>
