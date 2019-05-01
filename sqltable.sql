@@ -21,7 +21,7 @@ CREATE TABLE users (
 CREATE TABLE forum (
     poster_id INT(10) NOT NULL,
     poster_name VARCHAR(50) NOT NULL,
-    post VARCHAR(250) NOT NULL,
+    post VARCHAR(250) NOT NULL
 );
 
 -- Create books table
@@ -74,11 +74,11 @@ INSERT INTO forum (poster_id, poster_name, post) VALUES (3, 'Manuel Herrera', 'N
 
 -- Populate books table
 
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0321954351', '9780321954350', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', 40.00, 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg', 'images\\tocCalculus.jpg', 5);
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (2, '0133813460', '9780133813463', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', 14.00, 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg', 'images\\TOCJavaProgramming.jpg', 5);
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (4, '1118290275', '9781118290279', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', 50.99, 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg', 'images\\tocPython.jpg', 5);
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0062397346', '9780062397346', 'A People''s History of the United States', 'Howard Zinn', 25.00, 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\coverHistroyUs.jpg', 'images\\tocHistroyUs.jpg', 3);
-INSERT INTO books (seller_id, isbn10, isbn13, title, author, price, description, post_time, pic_path, toc_path) VALUES (5, '1491914912', '9781491914915', 'Learning JavaScript', 'Ethan Brown', 27.00, 'Have been used few times', '2019-03-10', 'images\\CoverLearningJavascript.jpg', 'images\\TOCLearningJavascript.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0321954351', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', 40.00, 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg', 'images\\tocCalculus.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (2, '0133813460', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', 14.00, 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg', 'images\\TOCJavaProgramming.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (4, '1118290275', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', 50.99, 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg', 'images\\tocPython.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0062397346', 'A People''s History of the United States', 'Howard Zinn', 25.00, 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\coverHistroyUs.jpg', 'images\\tocHistroyUs.jpg', 3);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path) VALUES (5, '1491914912', 'Learning JavaScript', 'Ethan Brown', 27.00, 'Have been used few times', '2019-03-10', 'images\\CoverLearningJavascript.jpg', 'images\\TOCLearningJavascript.jpg');
 
 -- Populate comments table
 
