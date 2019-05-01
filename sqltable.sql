@@ -46,7 +46,7 @@ CREATE TABLE comments (
     commenter_name VARCHAR(50) NOT NULL,
     comment VARCHAR(250) NOT NULL,
     parent_isbn10 VARCHAR(10) NOT NULL,
-    rating INT(1)
+    comment_rating INT(1)
 );
 
 -- Create a temporary cart table which gets deleted once the user logs out
@@ -82,7 +82,7 @@ INSERT INTO books (seller_id, isbn10, title, author, price, description, post_ti
 
 -- Populate comments table
 
-INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, rating) VALUES (1, 'Kevin Crespin', 'If you are taking MATH 2010 and MATH 2020 at Cal State, you are required to have it in two semesters; so if you are a freshman is a must have', '0321954351', 5);
-INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, rating) VALUES (1, 'Kevin Crespin', 'Required for US HIST class.', '0062397346', 3);
-INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, rating) VALUES (4, 'John Jackson', 'This book will help you understand Java programming way better, I really recommend it.', '0133813460', 5);
-INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, rating) VALUES (5, 'Jose Rosa', 'Getting familiar with data structures in programming is really important, if you wanna be a decent programmer I recommend you starting here.', '1118290275', 5);
+INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, comment_rating) VALUES (1, 'Kevin Crespin', 'If you are taking MATH 2010 and MATH 2020 at Cal State, you are required to have it in two semesters; so if you are a freshman is a must have', '0321954351', 5);
+INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, comment_rating) VALUES (1, 'Kevin Crespin', 'Required for US HIST class.', '0062397346', 3);
+INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, comment_ating) VALUES (4, 'John Jackson', 'This book will help you understand Java programming way better, I really recommend it.', '0133813460', 5);
+INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, comment_rating) VALUES (5, 'Jose Rosa', 'Getting familiar with data structures in programming is really important, if you wanna be a decent programmer I recommend you starting here.', '1118290275', 5);
