@@ -1,0 +1,55 @@
+@charset "utf-8";
+*{
+    font-family: 'Futura';
+    margin: 0;
+}
+
+body {
+    background-image: url("images/csla-palms.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin: 150px 550px 0px 550px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    width: 400px;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+}
+
+#pic1 {
+    height: 100px;
+    width: 300px;
+}
+
+#title {
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: -10px;
+    text-align: center;
+}
+
+#submit {
+    background-color: #4A4F55;
+    border: #4A4F55;
+    border-radius: 5px;
+    color: white;
+    height: 30px;
+    margin-top: 15px;
+    width: 100px;
+}
+
+#adminLink {
+    margin-top: 15px;
+}
+
+#text2 {
+    margin-left: 43px;
+}
