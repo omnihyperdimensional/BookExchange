@@ -44,7 +44,7 @@ while($row = mysqli_fetch_assoc($results)) {
 	print "<div class='col m-0 pl-0'>";
 	print "<p>Price</p>";
 	print "<h3>$" . $row["price"] . "</h3>";
-	print "<a href='bookCart.php?isbn10=".($row["isbn10"]) ."'>Add to Cart</a>";
+	print "<a href='profile.php?isbn10=".($row["isbn10"]) ."'>Add to Cart</a>";
 	print "<div>Sold by " . $row["name"] . "</div>";
 	print "<div>Book Rating " . $row["rating"] . "</div> ";
 	print "<p class='mt-4'><strong>Description</strong></p>";
