@@ -1,22 +1,29 @@
 <!doctype html>
 <html>
+
 <head>
-<title>My Bargains</title>
+    <title>My Bargains</title>
+    <!--styles-->
+    <style>
+    textarea {
+        width: 1080px;
+    }
+    </style>
 </head>
 
 <body>
-<?php
+    <?php
 	include("MainMenu.php");
 ?>
-<?php
+    <?php
 	include("Connect_Database.php");
 ?>
-<?php
+    <?php
 	$selectBooks = "SELECT * FROM books b JOIN users u ON b.seller_id = u.id WHERE b.isbn10 = " . $_GET['isbn10'] . ";";
 	$resultsBooks = mysqli_query($connect, $selectBooks);
 ?>
 
-<?php
+    <?php
 while($row = mysqli_fetch_assoc($resultsBooks)) {
 	print "<div class='container-fluid'>";
 	print "<h1 class='display-4 text-center m-4'>" . $row["title"] . "</h1>";
@@ -53,19 +60,19 @@ while($row = mysqli_fetch_assoc($resultsBooks)) {
 }
 ?>
 
-<?php
+    <?php
 	$selectComments = "SELECT * FROM comments c JOIN books b ON c.parent_isbn10 = b.isbn10 WHERE b.isbn10 = " . $_GET["isbn10"];
 	$resultsComments = mysqli_query($connect, $selectComments);
 ?>
 
-<div class="container">
+    <div class="container">
         <div class="col" style="position">
             <table class="table table-bordered table-sm" style="margin-left: 50px; margin-top: 50px;">
                 <thead class="thead-light">
                     <tr>
                         <th>NAME</th>
                         <th>COMMENT</th>
-			<th>RATING</th>
+                        <th>RATING</th>
                     </tr>
                     <?php
                     while($rowComments = mysqli_fetch_assoc($resultsComments)){
@@ -82,34 +89,35 @@ while($row = mysqli_fetch_assoc($resultsBooks)) {
 			print "</tr>";
                     }
                     ?>
-		</thead>
-	</table>
-	<table style="margin-left: 50px; margin-top: 50px; margin-bottom: 100px;">
-	<form action='commentinsert.php' method='post'>
-		<tr>
-			<td style='text-align: left;'>COMMENT</td>
-			<input type='hidden' name='id' value='<?php print $_SESSION["id"] ?>'/>
-			<input type='hidden' name='name' value='<?php print $_SESSION["name"] ?>'/>
-			<input type='hidden' name='isbn10' value='<?php print $_GET["isbn10"] ?>'/>
-		</tr>
-		<tr>
-			<td colspan='3'><textarea rows='2' cols='130' name='comment' ></textarea></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td style='text-align: right;'> 
-				Rating: &nbsp;&nbsp; 1 <input name="rating" type="radio" value="1"> 
-				<input name="rating" type="radio" value="2"> 
-				<input name="rating" type="radio" value="3" required checked> 
-				<input name="rating" type="radio" value="4"> 
-				<input name="rating" type="radio" value="5"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-				<input class="btn btn-primary" type="submit" value="Submit">
-			</td>
-		</tr>
-	</form>
-	</table>
+                </thead>
+            </table>
+            <table style="margin-left: 50px; margin-top: 50px; margin-bottom: 100px;">
+                <form action='commentinsert.php' method='post'>
+                    <tr>
+                        <td style='text-align: left;'>COMMENT</td>
+                        <input type='hidden' name='id' value='<?php print $_SESSION["id"] ?>' />
+                        <input type='hidden' name='name' value='<?php print $_SESSION["name"] ?>' />
+                        <input type='hidden' name='isbn10' value='<?php print $_GET["isbn10"] ?>' />
+                    </tr>
+                    <tr>
+                        <td colspan='3'><textarea rows='2' cols='130' name='comment'></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td style='text-align: right;'>
+                            Rating: &nbsp;&nbsp; 1 <input name="rating" type="radio" value="1">
+                            <input name="rating" type="radio" value="2">
+                            <input name="rating" type="radio" value="3" required checked>
+                            <input name="rating" type="radio" value="4">
+                            <input name="rating" type="radio" value="5"> 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input class="btn btn-primary" type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </form>
+            </table>
         </div>
     </div>
 </body>
+
 </html>
