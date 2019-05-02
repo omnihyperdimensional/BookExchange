@@ -24,7 +24,7 @@
 
     <div class="row">
         <div class="col-6" id="white-box">
-            <a class="li_css_a" href="selling.php?<?php print $name_email; ?>">PROFILE</a>
+            <a class="li_css_a" href="profile.php?<?php print $name_email; ?>">PROFILE</a>
         </div>
         <div class="col-6" id="black-box">
             <a class="li_css_a" href="forums.php?<?php print $name_email;?>">FORUMS</a>
