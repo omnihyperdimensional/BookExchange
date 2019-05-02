@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>Chat Post</title>
 </head>
 
@@ -10,18 +10,13 @@
 	include("Connect_Database.php");
 ?>
 <?php
+	$postInsert = "INSERT INTO forum (poster_id, poster_name, post) VALUES('" .
+	$_POST["id"] . "', '" .
+	$_POST["name"] . "', '" .
+	$_POST["post"] . "')";
 
-$postInsert = "insert into forum values('" .
-$_POST["id"] .
-"', '" .
-$_POST["name"] .
-"', '" .
-$_POST["post"] .
-"', null)";
-
-$result = mysqli_query($connect, $postInsert);
+	$result = mysqli_query($connect, $postInsert);
 	header("Location: forums.php");
-
 ?>
 </body>
 </html>
