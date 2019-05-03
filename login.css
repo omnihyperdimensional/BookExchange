@@ -1,6 +1,8 @@
 *{
-    font-family: 'Futura';
-    margin: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20;
+    line-height: 1.8;
+    color: #000000;
 }
 
 body {
@@ -12,13 +14,16 @@ body {
 .class {
     padding: 50px;
 }
-form {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    margin: 150px 515px 0px 515px;
-    padding-bottom: 50px;
-    padding-top: 20px;
-    
+
+#form1 {
+    width: 340px;
+    height: 300px;
+    background: rgba(255, 254, 254, 0.80);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
 }
 
 a {
