@@ -32,7 +32,8 @@ Email
 </tr>
 </form>
 <p>
-<a href="/admin.php"> Back to Admin Table</a>
+<a href="/BookExchange/admin.php"> Back to Admin Table</a>
+<a style="float:right" href = "logout.php">Logout</a>
 </p>
 </body>
 </html>
