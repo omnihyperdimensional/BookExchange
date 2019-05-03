@@ -33,7 +33,7 @@ If you need to make some small changes, you can just edit directly from the mast
 ## Authors
 
 * **Kevin Crespin** - [KevinCrespin](https://github.com/KevinCrespin)
-* **Alex Huan** - [omnihyperdimensional](https://github.com/omnihyperdimensional)
+* **Alex Huang** - [omnihyperdimensional](https://github.com/omnihyperdimensional)
 * **Guadalupe Sahagun** - [lupecs](https://github.com/lupecs)
 * **Sandip Hodkhasa** - [shodkhasa](https://github.com/shodkhasa)
 * **Paul Clef Ube** - [0verl0adedZer0s](https://github.com/0verl0adedZer0s)
