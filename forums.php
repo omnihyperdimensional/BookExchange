@@ -60,7 +60,7 @@
                         <input type="hidden" name="id" value="<?php print $_SESSION['id']?>" />
                     </tr>
                     <tr>
-                        <td colspan="2"><textarea rows="6" cols="40" name="post" ></textarea></td>
+                        <td colspan="2"><textarea rows="6" cols="40" name="post"  maxlength="250" required></textarea></td>
                     </tr>
                     <tr>
                         <td></td>
