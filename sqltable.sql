@@ -13,7 +13,8 @@ CREATE TABLE users (
     name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     is_admin BOOLEAN NOT NULL DEFAULT 0,
-    balance DECIMAL(15, 2) NOT NULL DEFAULT 150.99
+    balance DECIMAL(15, 2) NOT NULL DEFAULT 100,
+    hold_status VARCHAR(10) NOT NULL DEFAULT 'Active'
 );
 
 -- Create forum table
@@ -49,7 +50,7 @@ CREATE TABLE comments (
     comment_rating INT(1)
 );
 
--- Create a temporary cart table which gets deleted once the user logs out
+-- Create temporary cart table (Gets deleted once the user logs out)
 
 create table cart (
     isbn10 VARCHAR(10) NOT NULL
@@ -57,13 +58,13 @@ create table cart (
 
 -- Populate users table
 
-INSERT INTO users (name, email, is_admin, balance) VALUES ('Kevin Crespin', 'kcrespi@calstatela.edu', 1, 20.55);
+INSERT INTO users (name, email, is_admin, balance) VALUES ('Kevin Crespin', 'kcrespi@calstatela.edu', 1, 30.00);
 INSERT INTO users (name, email, is_admin) VALUES ('Admin', 'admin@calstatela.edu', 1);
 INSERT INTO users (name, email) VALUES ('Jose Rosa', 'jrosa@calstatela.edu');
 INSERT INTO users (name, email) VALUES ('Manuel Herrera', 'mherrer@calstatela.edu');
 INSERT INTO users (name, email) VALUES ('John Jackson', 'jjackson@calstatela.edu');
 INSERT INTO users (name, email) VALUES ('Sandip Hodkhasa', 'shodkha@calstatela.edu');
-INSERT INTO users (name, email, balance) VALUES ('test', 'test@test.edu', 10.99);
+INSERT INTO users (name, email, balance) VALUES ('test', 'test@test.edu', 10.00);
 
 -- Populate forum table
 
