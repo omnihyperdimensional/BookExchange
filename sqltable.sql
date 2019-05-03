@@ -68,19 +68,24 @@ INSERT INTO users (name, email, balance) VALUES ('test', 'test@test.edu', 10.00)
 
 -- Populate forum table
 
-INSERT INTO forum (poster_id, poster_name, post) VALUES (1, 'Kevin Crespin', 'Hello, everyone! I was looking to sell my ''Java Introduction''. I made it available in the BookExchange market.');
+INSERT INTO forum (poster_id, poster_name, post) VALUES (1, 'Kevin Crespin', 'Hello, everyone! I was looking to sell my ''Java Introduction'' I made it available in the BookExchange market');
 INSERT INTO forum (poster_id, poster_name, post) VALUES (2, 'Jose Rosa', 'I''m looking to donate my University Physics book, if interested check the BookExchange market');
-INSERT INTO forum (poster_id, poster_name, post) VALUES (4, 'John Jackson', 'Goodafternoon, I need this book <a href="https:///www.amazon.com/History-Empires-Rise-Fall-Greatest/dp/1547021241/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1556238372&sr=8-2-spons">History of Empires</a> for tomorrow, HELP!');
+INSERT INTO forum (poster_id, poster_name, post) VALUES (4, 'John Jackson', 'Help! I need this book <a href="https:///www.amazon.com/History-Empires-Rise-Fall-Greatest/dp/1547021241/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1556238372&sr=8-2-spons">History of Empires</a> for tomorrow');
 INSERT INTO forum (poster_id, poster_name, post) VALUES (3, 'Manuel Herrera', 'Nice website!');
 
 -- Populate books table
 
-INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0321954351', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', 40.00, 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg', 'images\\tocCalculus.jpg', 5);
-INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (2, '0133813460', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', 14.00, 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg', 'images\\TOCJavaProgramming.jpg', 5);
-INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (4, '1118290275', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', 50.99, 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg', 'images\\tocPython.jpg', 5);
-INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path, rating) VALUES (1, '0062397346', 'A People''s History of the United States', 'Howard Zinn', 25.00, 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\coverHistroyUs.jpg', 'images\\tocHistroyUs.jpg', 3);
-INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, toc_path) VALUES (5, '1491914912', 'Learning JavaScript', 'Ethan Brown', 27.00, 'Have been used few times', '2019-03-10', 'images\\CoverLearningJavascript.jpg', 'images\\TOCLearningJavascript.jpg');
-
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, rating) VALUES (1, '0321954351', 'Calculus 2nd Edition', 'William L. Briggs, Lyle Cochran, Bernard Gillett', 40.00, 'Excellent condition, used only for a semester', '2019-03-10', 'images\\calculus2ndedition.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, rating) VALUES (2, '0133813460', 'Introduction to Java Programming Comprehensive Version 10th ', 'Y. Daniel Liang', 14.00, 'Fair condition', '2019-03-10', 'images\\javaprogramming10thedition.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, rating) VALUES (4, '1118290275', 'Data Structures and Algorithms in Python 1st Edition', 'Michael T. Goodrich', 50.99, 'Mint condition, needs to go now!', '2019-03-10', 'images\\datastructurespython1stedition.jpg', 5);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path, rating) VALUES (1, '0062397346', 'A People''s History of the United States', 'Howard Zinn', 25.00, 'Excellent condition, used only for two semesters', '2019-03-10', 'images\\coverHistroyUs.jpg', 3);
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (5, '1491914912', 'Learning JavaScript 3rd Edition', 'Ethan Brown', 37.00, 'Have been used few times', '2019-03-10', 'images\\CoverLearningJavascript.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (6, '0321982584', 'University Physics 14th Edition', 'Hugh D. Young, Roger A. Freedman', 51.00, 'Have been used few times', '2019-05-03', 'images\\coverUPhysics.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (6, '1305658000', 'Elementary Linear Algebra 8th Edition', 'Ron Larson', 23.55, 'New', '2019-05-03', 'images\\coverLAlgreba.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (5, '1118885840', 'Engineering Mechanics: Dynamics 8th Edition', 'James L. Meriam, L. G. Kraige, Jeffrey N. Bolton', 97.77, 'Never used', '2019-04-10', 'images\\coverDynamics.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (3, '0393614182', 'Give Me Liberty!: An American History Seagull Fifth Edition (Vol 1)', 'Eric Foner', 27.77, 'Never used', '2019-04-18', 'images\\coverLiberty.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (3, '0393614190', 'Give Me Liberty!: An American History Seagull Fifth Edition (Vol. 2)', 'Eric Foner', 29.97, 'Never used', '2019-04-17', 'images\\coverLiberty2.jpg');
+INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path) VALUES (5, '1429215100', 'Mathematical Structures for Computer Science Seventh Edition', 'Judith L. Gersting', 97.77, 'Never used', '2019-04-15', 'images\\coverMathS.jpg');
 -- Populate comments table
 
 INSERT INTO comments (commenter_id, commenter_name, comment, parent_isbn10, comment_rating) VALUES (1, 'Kevin Crespin', 'If you are taking MATH 2010 and MATH 2020 at Cal State, you are required to have it in two semesters; so if you are a freshman is a must have', '0321954351', 5);
