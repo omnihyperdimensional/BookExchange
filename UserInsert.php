@@ -4,23 +4,20 @@
 <meta charset="utf-8">
 <title>Insert</title>
 </head>
-
 <body>
 <?php
 	include("Connect_Database.php");
 ?>
+
 <?php
-
-
-$userInsert = "insert into users (name, email) values('" .
+$userInsert = "INSERT INTO users (name, email) VALUES('" .
 $_POST["name"] .
 "', '" .
 $_POST["email"] .
 "')";
 
 $result = mysqli_query($connect, $userInsert);
-	header("Location: Admin.php");
-
+header("Location: Login.html");
 ?>
 </body>
 </html>

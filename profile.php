@@ -92,7 +92,11 @@
 					<tr>
 						<td>
 						<?php
+
 							if ($lowBalance != null) {
+
+							if ($lowBalance == null) {
+
 								print "<h6><font color=red><strong>$" . number_format(($data["balance"] - $totalBookPriceInCart), 2) . "  " . $lowBalance . "</strong></font></h6>";
 							} else {
 								print "$" . number_format(($data["balance"] - $totalBookPriceInCart), 2);
@@ -112,6 +116,7 @@
 						print "</tr>";
 						print "<tr>";
 						print "<td rowspan=3 align='center'><a href='BookInformation.php?isbn10=" . ($row["isbn10"]) . "'><img src='" . $row["pic_path"] . "' height = 190 width = 150></a></td>";
+						print "<td rowspan=2 align='center'><img src='" . $row["pic_path"] . "' height = 190 width = 150></td>";
 						print "<td id='center'> $ " . ($row["price"]) . "</td>";
 						print "<tr>";
 						print "<td id='center'><a href='#'>Delete Item</a></td>";
@@ -137,6 +142,7 @@
 						print "</tr>";
 						print "<tr>";
 						print "<td rowspan=3 align='center'><a href='BookInformation.php?isbn10=" . ($row["isbn10"]) . "'><img src='" . $row["pic_path"] . "' height = 190 width = 150></a></td>";
+						print "<td rowspan=2 align='center'><img src='" . $row["pic_path"] . "' height = 190 width = 150></td>";
 						print "<td id='center'> $ " . ($row["price"]) . "</td>";
 						print "<tr>";
 						print "<td id='center'><a href='deleteBook.php?isbn10=" . ($row["isbn10"]) . "'>Remove</a></td>";
