@@ -6,38 +6,43 @@
 </head>
 <body>
 <?php
-date_default_timezone_set("America/Los_Angeles");
-$currentTime = date("Y-m-d H:i:s");
-print ($currentTime);
+	date_default_timezone_set("America/Los_Angeles");
+	$currentTime = date("Y-m-d H:i:s");
+	print ($currentTime);
 ?>
 <?php
-if ($_FILES["pic"])
-{
+if ($_FILES["pic"]){
 	$pathname="images/" . $_FILES['pic']['name'];
 	move_uploaded_file($_FILES['pic']['tmp_name'], $pathname);
 }
-print ($pathname);
 ?>
 <?php
 	include("Connect_Database.php")
 ?>
 <?php
+	$selectUser = "SELECT * FROM users WHERE name ='"
+	. $_POST['name'] .  "'AND email='"
+	. $_POST['email'] . "'";
 
-$bookInsert = "insert into books values(null, '" .
-$_POST["name"] . 
-"', '" .
-$_POST["email"] . 
-"', '" .
-$_POST["title"] .
-"', '" .
-$_POST["description"] . 
-"', '" . 
-$currentTime . 
-"', '" . 
-$pathname .  
-"')";
+	$results = mysqli_query($connect, $selectUser);
+	$id = 0;
+	
+	while($row = mysqli_fetch_assoc($results)) {
+		$id = $row["id"];
+	}
 
-$result = mysqli_query($connect, $bookInsert);
+	$bookInsert = "INSERT INTO books (seller_id, isbn10, title, author, price, description, post_time, pic_path)" . 
+	" VALUES(" .
+	$id . ", " . 
+	$_POST["isbn10"] . ", '" . 
+	$_POST["title"] . "', '" .
+	$_POST["author"] . "', " . 
+	$_POST["price"] . ", '" . 
+	$_POST["description"] . "', '" . 
+	$currentTime . "', '" . 
+	$pathname . "')";
+
+	$result = mysqli_query($connect, $bookInsert);
 	header("Location: shopping.php")
 ?>
 
